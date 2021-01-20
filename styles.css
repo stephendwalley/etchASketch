@@ -1,23 +1,28 @@
-body {
+.reset {
+}
+
+.game {
 	display: flex;
 	justify-content: center;
 }
 
 #container {
 	display: grid;
-	grid-template: repeat(16, 40px) / repeat(16, 40px);
+	grid-template: repeat(16, 1fr) / repeat(16, 1fr);
 	background-color: grey;
 	padding: 10px;
 }
 
 .grid {
-	background-color: White;
 	border: 1px solid lightgrey;
 	padding: 20px;
 	text-align: center;
 }
 
-/* .grid.grid:hover {
-    background-color: black;
-} */
+.uncoloured {
+	background-color: White;
+}
 
+.coloured {
+	background-color: grey;
+}
