@@ -13,16 +13,14 @@
 	padding: 10px;
 }
 
-.grid {
+.grid-uncoloured {
+    background-color: white;
 	border: 1px solid lightgrey;
 	padding: 20px;
 	text-align: center;
 }
 
-.uncoloured {
-	background-color: White;
+.grid-coloured {
+	background-color: Grey;
 }
 
-.coloured {
-	background-color: grey;
-}
