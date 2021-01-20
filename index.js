@@ -1,4 +1,5 @@
 let container = document.querySelector("#container");
+let newGrid = document.querySelectorAll(".grid-uncoloured");
 
 for (i = 0; i < 256; i++) {
 	let newGrid = document.createElement("div");
@@ -19,6 +20,5 @@ button.addEventListener("click", resetGridColor);
 
 function resetGridColor(e) {
 	console.log("reset");
-	let newGrid = document.querySelectorAll(".grid");
-	newGrid.classList.remove("coloured");
+	newGrid.className = "grid-uncoloured";
 }
