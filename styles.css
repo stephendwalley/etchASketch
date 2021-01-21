@@ -8,19 +8,21 @@
 
 #container {
 	display: grid;
+	width: 960px;
+	height: 960px;
 	grid-template: repeat(16, 1fr) / repeat(16, 1fr);
 	background-color: grey;
 	padding: 10px;
 }
 
-.grid-uncoloured {
+.grid-uncolored {
     background-color: white;
 	border: 1px solid lightgrey;
 	padding: 20px;
 	text-align: center;
 }
 
-.grid-coloured {
+.grid-colored {
 	background-color: Grey;
 }
 
