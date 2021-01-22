@@ -7,9 +7,15 @@ function defaultGrid() {
 		newGrid.classList.add("grid-uncolored");
 		container.appendChild(newGrid);
 		newGrid.addEventListener("mouseover", adjustGridColor);
-		console.log("new grid made");
 	}
 }
+
+function adjustGridColor(e) {
+	this.className = "grid-colored";
+}
+
+let button = document.querySelector(".reset");
+button.addEventListener("click", chooseGridSize);
 
 function chooseGridSize() {
 	let choiceSize = prompt(
@@ -19,7 +25,6 @@ function chooseGridSize() {
 
 	if (choiceSize <= 100 && choiceSize > 0) {
 		createGrid(choiceSize);
-		console.log("success");
 	} else {
 		alert("ERROR. Please choose a valid value between 1 - 100.");
 	}
@@ -30,7 +35,6 @@ function createGrid(choiceSize) {
 	let grid = document.querySelectorAll(".grid-uncolored, .grid-colored");
 	grid.forEach((element) => {
 		element.remove();
-		console.log("removed div");
 	});
 
 	// creates the correct number of divs
@@ -40,28 +44,10 @@ function createGrid(choiceSize) {
 		newGrid.classList.add("grid-uncolored");
 		container.appendChild(newGrid);
 		newGrid.addEventListener("mouseover", adjustGridColor);
-		console.log("new grid made");
 	}
 
 	// gets the class variables from css and adjusts them to the correct width and height to make the grid
 	let r = document.querySelector(":root");
 	r.style.setProperty("--grid-height", choiceSize);
 	r.style.setProperty("--grid-width", choiceSize);
-}
-
-function adjustGridColor(e) {
-	this.className = "grid-colored";
-	console.log("adjustGrid Color!");
-}
-
-let button = document.querySelector(".reset");
-button.addEventListener("click", resetGridColor);
-
-function resetGridColor(e) {
-	let coloredGrid = document.querySelectorAll(".grid-colored");
-	coloredGrid.forEach((element) => {
-		element.className = "grid-uncolored";
-		console.log("reset");
-	});
-	chooseGridSize();
 }
